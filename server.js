@@ -22,10 +22,10 @@ app.use(express.static('./Develop/public'));
 app.use(express.json());
 
 
-app.get('/', (req, res) => res.sendFile(__dirname, 'Develop/public/index.html'));
+app.get('/', (req, res) => res.sendFile('https://vast-island-44928-25e04bd30412.herokuapp.com/', 'Develop/public/index.html'));
 
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join(__dirname, 'Develop/public/notes.html'))
+  res.sendFile(path.join('https://vast-island-44928-25e04bd30412.herokuapp.com/', 'Develop/public/notes.html'))
 );
 app.get('/api', (req, res) =>
   res.json(data)
