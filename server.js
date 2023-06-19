@@ -17,7 +17,7 @@ const app = express();
 const PORT = process.env.PORT || 3002;
 
 // Static middleware pointing to the public folder
-app.use(express.static('https://github.com/SiavashNamiranian/Note-Taker/tree/main/Develop/public'));
+app.use(express.static('./Develp/public'));
 
 // Middleware for parsing application/json
 app.use(express.json());
