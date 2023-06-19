@@ -1,13 +1,14 @@
 // Import Express.js
 const express = require('express');
 
-const data = require('./Develop/db/db.json')
+const data = require('./Develop/db/db.json');
+const { dirname } = require('path');
 
 // Import built-in Node.js package 'path' to resolve path of files that are located on the server
-// const path = require('path');
+const path = require('path');
 
 
-// const api = require('./Develop/public/assets/js/index.js');
+//const api = require('./Develop/public/assets/js/index.js');
 
 // Initialize an instance of Express.js
 const app = express();
@@ -22,11 +23,12 @@ app.use(express.static('./Develop/public'));
 app.use(express.json());
 
 
-app.get('/', (req, res) => res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/tree/main/', 'Develop/public/index.html'));
+app.get('/', (req, res) => res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/Develop/public/index.html'));
 
 app.get('/notes', (req, res) =>
-  res.sendFile(path.join('https://github.com/SiavashNamiranian/Note-Taker/tree/main/', 'Develop/public/notes.html'))
+  res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/Develop/public/notes.html')
 );
+console.log('https://github.com/SiavashNamiranian/Note-Taker/Develop/public/notes.html')
 app.get('/api', (req, res) =>
   res.json(data)
 );
