@@ -1,37 +1,19 @@
-// Import Express.js
 const express = require('express');
-
-const data = require('./Develop/db/db.json');
-const { dirname } = require('path');
-
-// Import built-in Node.js package 'path' to resolve path of files that are located on the server
 const path = require('path');
 
-
-//const api = require('./Develop/public/assets/js/index.js');
-
-// Initialize an instance of Express.js
-const app = express();
-
-// Specify on which port the Express.js server will run
 const PORT = process.env.PORT || 3002;
 
-// Static middleware pointing to the public folder
-app.use(express.static('./Develp/public'));
+const app = express();
 
-// Middleware for parsing application/json
-app.use(express.json());
-
-
-app.get('/', (req, res) => res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/blob/main/Develop/public/index.html'));
-
-app.get('/notes', (req, res) =>
-  res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/blob/main/Develop/public/notes.html'));
-  
-app.get('/api', (req, res) =>
-  res.json(data)
+app.get('/', (req, res) =>
+  res.sendFile(path.join(__dirname, '/Develop/public/index.html'))
 );
 
+app.get('/notes', (req, res) =>
+  res.sendFile(path.join(__dirname, '/Develop/public/notes.html'))
+);
+
+
 app.listen(PORT, () =>
-  console.log(`app listening at http://localhost:${PORT}`)
+  console.log(`App listening at http://localhost:${PORT} 🚀`)
 );
