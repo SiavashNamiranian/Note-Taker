@@ -1,13 +1,14 @@
 // Import Express.js
 const express = require('express');
 
-const data = require('./Develop/db/db.json')
+const data = require('./Develop/db/db.json');
+const { dirname } = require('path');
 
 // Import built-in Node.js package 'path' to resolve path of files that are located on the server
 const path = require('path');
 
 
-const api = require('./Develop/public/assets/js/index.js');
+//const api = require('./Develop/public/assets/js/index.js');
 
 // Initialize an instance of Express.js
 const app = express();
