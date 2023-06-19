@@ -1,16 +1,16 @@
-const Notes = require('express').Router();
+const notes = require('express').Router();
 
 const uuid = require('../helpers/uuid');
 
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils.js');
 
-Notes.get('/', (req, res) => {
+notes.get('/', (req, res) => {
     // >>> api/tips
     console.info(`${req.method} request received for notes`);
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
   });
 
-Notes.post('/', (req, res) => {
+notes.post('/', (req, res) => {
     console.info(`${req.method} request received to add a note`);
   
     const { title, text } = req.body;
