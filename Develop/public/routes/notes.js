@@ -4,13 +4,13 @@ const uuid = require('../helpers/uuid');
 
 const { readFromFile, readAndAppend } = require('../helpers/fsUtils.js');
 
-notes.get('/', (req, res) => {
+Notes.get('/', (req, res) => {
     // >>> api/tips
     console.info(`${req.method} request received for notes`);
     readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
   });
 
-  notes.post('/', (req, res) => {
+Notes.post('/', (req, res) => {
     console.info(`${req.method} request received to add a note`);
   
     const { title, text } = req.body;
