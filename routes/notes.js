@@ -2,7 +2,7 @@ const notes = require('express').Router();
 
 const uuid = require('../helpers/uuid');
 
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils.js');
+const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 
 notes.get('/', (req, res) => {
     // >>> api/tips
