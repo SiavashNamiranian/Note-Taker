@@ -23,12 +23,11 @@ app.use(express.static('./Develop/public'));
 app.use(express.json());
 
 
-app.get('/', (req, res) => res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/Develop/public/index.html'));
+app.get('/', (req, res) => res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/blob/main/Develop/public/index.html'));
 
 app.get('/notes', (req, res) =>
-  res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/Develop/public/notes.html')
+  res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/blob/main/Develop/public/notes.html')
 );
-console.log('https://github.com/SiavashNamiranian/Note-Taker/Develop/public/notes.html')
 app.get('/api', (req, res) =>
   res.json(data)
 );
