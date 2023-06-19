@@ -7,7 +7,7 @@ const { readFromFile, readAndAppend } = require('../helpers/fsUtils.js');
 notes.get('/', (req, res) => {
     // >>> api/tips
     console.info(`${req.method} request received for notes`);
-    readFromFile('./db/db.json').then((data) => res.json(JSON.parse(data)));
+    readFromFile('Develop/db/db.json').then((data) => res.json(JSON.parse(data)));
   });
 
 notes.post('/', (req, res) => {
