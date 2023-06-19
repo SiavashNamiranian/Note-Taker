@@ -1,3 +1,13 @@
+const express = require('express');
+
+
+const uuid = () =>
+   Math.floor((1 + Math.random()) * 0x10000)
+    .toString(16)
+    .substring(1);
+
+
+
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -70,6 +80,7 @@ const handleNoteSave = () => {
   const newNote = {
     title: noteTitle.value,
     text: noteText.value,
+    id: uuid()
   };
   saveNote(newNote).then(() => {
     getAndRenderNotes();
