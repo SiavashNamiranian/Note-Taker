@@ -7,7 +7,7 @@ const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
 notes.get('/', (req, res) => {
     // >>> api/tips
     console.info(`${req.method} request received for notes`);
-    readFromFile('Develop/db/db.json').then((data) => res.json(JSON.parse(data)));
+    readFromFile('db/db.json').then((data) => res.json(JSON.parse(data)));
   });
 
 notes.post('/', (req, res) => {
@@ -22,7 +22,7 @@ notes.post('/', (req, res) => {
         note_id: uuid(),
       };
   
-      readAndAppend(newNote, './db/tips.json');
+      readAndAppend(newNote,'db/db.json');
       res.json(`Note added successfully 🚀`);
     } else {
       res.error('Error in adding Note');
