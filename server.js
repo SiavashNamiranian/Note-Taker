@@ -17,7 +17,7 @@ const app = express();
 const PORT = process.env.PORT || 3002;
 
 // Static middleware pointing to the public folder
-app.use(express.static('./Develop/public'));
+app.use(express.static('https://github.com/SiavashNamiranian/Note-Taker/tree/main/Develop/public'));
 
 // Middleware for parsing application/json
 app.use(express.json());
@@ -26,8 +26,8 @@ app.use(express.json());
 app.get('/', (req, res) => res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/blob/main/Develop/public/index.html'));
 
 app.get('/notes', (req, res) =>
-  res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/blob/main/Develop/public/notes.html')
-);
+  res.sendFile('https://github.com/SiavashNamiranian/Note-Taker/blob/main/Develop/public/notes.html'));
+  
 app.get('/api', (req, res) =>
   res.json(data)
 );
