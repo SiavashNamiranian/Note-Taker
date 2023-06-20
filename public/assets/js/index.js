@@ -1,5 +1,3 @@
-
-
 let noteTitle;
 let noteText;
 let saveNoteBtn;
@@ -43,7 +41,6 @@ const saveNote = (note) =>
     },
     body: JSON.stringify(note),
   });
- 
 
 const deleteNote = (id) =>
   fetch(`/api/notes/${id}`, {
@@ -59,8 +56,8 @@ const renderActiveNote = () => {
   if (activeNote.id) {
     noteTitle.setAttribute('readonly', true);
     noteText.setAttribute('readonly', true);
-    noteTitle.value = el.title;
-    noteText.value = el.text;
+    noteTitle.value = activeNote.title;
+    noteText.value = activeNote.text;
   } else {
     noteTitle.removeAttribute('readonly');
     noteText.removeAttribute('readonly');
